@@ -1,6 +1,4 @@
-package pl.sda.tdd;
-
-import org.mockito.Mock;
+package pl.sda.tdd.pl.sda.tdd.notificationservice;
 
 /*
 Stwórz atrapę powyższych serwisów implementując testy dla klasy NotificationService.

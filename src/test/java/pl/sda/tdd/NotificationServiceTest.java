@@ -5,8 +5,10 @@ import org.junit.runner.RunWith;
 import org.mockito.InjectMocks;
 import org.mockito.Mock;
 import org.mockito.runners.MockitoJUnitRunner;
+import pl.sda.tdd.pl.sda.tdd.notificationservice.EmailService;
+import pl.sda.tdd.pl.sda.tdd.notificationservice.NotificationService;
+import pl.sda.tdd.pl.sda.tdd.notificationservice.PigeonService;
 
-import static org.junit.Assert.*;
 import static org.mockito.Mockito.verify;
 import static org.mockito.Mockito.when;
 
