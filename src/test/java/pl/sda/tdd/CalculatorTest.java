@@ -1,6 +1,7 @@
 package pl.sda.tdd;
 
 import junitparams.JUnitParamsRunner;
+import org.assertj.core.api.Assertions;
 import org.junit.Before;
 import org.junit.Rule;
 import org.junit.Test;
@@ -35,7 +36,7 @@ public class CalculatorTest {
 
     @Test
     public void multiplyTest() {
-        //int result = calc.multiply(7, 2);
+        int result = calc.multiply(7, 2);
         assertEquals(14, calc.multiply(7, 2));
     }
 
@@ -50,12 +51,30 @@ public class CalculatorTest {
             calc.divide(7, 0);
     }
 
+    /*
+Rozszerz klasę Calculator tak, żeby przyjmowała wartości typu Integer
+zamiast int. Jeśli któryś z argumentów = null -> rzucamy wyjątek z
+odpowiednią wiadomością. Jeśli dzielnik = null -> rzucamy wyjątek z
+odpowiednią wartością.
+ */
     @Test
     public void shouldNullPointerException() {
         Integer a = 2;
         expectedException.expect(NullPointerException.class);
         expectedException.expectMessage("Parametr jest nullem");
         calc.add2(a, null);
+    }
+
+    /*
+    Zrefaktoruj klasę Calculator tak, żeby wykorzystywała asercje z AssertJ.
+     */
+    @Test
+    public void multiplyAssertJTest() {
+        Assertions.assertThat(3 * 5)
+                .as("3 * 5 = 15").isEqualTo(15)
+                .isGreaterThan(10)
+                .isBetween(10, 20)
+                .isNotEqualTo(100);
     }
 
 }

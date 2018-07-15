@@ -29,7 +29,6 @@ odpowiednią wiadomością. Jeśli dzielnik = null -> rzucamy wyjątek z
 odpowiednią wartością.
  */
     public Integer add2(Integer arg1, Integer arg2) {
-
         if (arg1 == null || arg2 == null) {
             throw new NullPointerException("Parametr jest nullem");
         }
